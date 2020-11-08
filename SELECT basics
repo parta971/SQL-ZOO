@@ -1,0 +1,26 @@
+
+------------------------------------------------------------------------------------
+1. Modify it to show the population of Germany
+
+select population 
+from world
+where name='germany'
+
+------------------------------------------------------------------------------------
+2. Show the name and the population for 'Sweden', 'Norway' and 'Denmark'.
+
+select name,population
+from world
+where name in ('Sweden', 'Norway','Denmark')
+
+------------------------------------------------------------------------------------
+3. Just the right size
+
+SELECT name,area
+FROM world
+WHERE area BETWEEN 200000 and 250000
+
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
+
