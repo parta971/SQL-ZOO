@@ -41,3 +41,9 @@ WHERE area> 3000000 OR population> 250000000
 SELECT name,population,area 
 FROM world
 WHERE area> 3000000 XOR population> 250000000
+
+9. Rounding
+
+SELECT name, round(population/1000000,2),round(gdp/1000000000,2)
+FROM world
+WHERE continent='South America'
