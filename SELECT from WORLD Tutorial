@@ -47,3 +47,32 @@ WHERE area> 3000000 XOR population> 250000000
 SELECT name, round(population/1000000,2),round(gdp/1000000000,2)
 FROM world
 WHERE continent='South America'
+
+10. Trillion dollar economies
+
+SELECT name,round(gdp/population,-3)
+FROM world
+WHERE gdp>1000000000000
+
+11. Name and capital have the same length
+
+SELECT name, capital
+FROM world
+WHERE length(name)=length(capital)
+
+12. Matching name and capital
+
+SELECT name,capital
+FROM world
+WHERE name <> capital and name like concat(left(capital,1),'%')
+
+other way
+
+select name,capital from world where left(name,1)=left(capital,1) and name<>capital
+
+13. All the vowels
+
+select name from world where name not like '% %'
+and name like '%a%' and name like '%e%' and name like '%i%' and name like '%o%'
+and name like '%u%'
+
