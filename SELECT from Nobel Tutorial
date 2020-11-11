@@ -27,3 +27,8 @@ select yr,subject,winner
 from nobel 
 where subject='Literature' and 1980<=yr and yr<=1989
 
+6. Only Presidents
+
+SELECT * FROM nobel
+ WHERE 
+winner IN ('Theodore Roosevelt','Woodrow Wilson','Jimmy Carter','Barack Obama')
