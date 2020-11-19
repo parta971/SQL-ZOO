@@ -32,3 +32,9 @@ where subject='Literature' and 1980<=yr and yr<=1989
 SELECT * FROM nobel
  WHERE 
 winner IN ('Theodore Roosevelt','Woodrow Wilson','Jimmy Carter','Barack Obama')
+
+7. John
+
+select winner from nobel where winner like 'John%'
+
+8.
