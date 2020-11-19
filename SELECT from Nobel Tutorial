@@ -48,3 +48,44 @@ union
 SELECT yr,subject,winner
 from nobel
 where subject='physics' and yr=1980
+
+9. Exclude Chemists and Medics
+
+select yr,subject,winner
+from nobel
+where yr=1980 and subject not in ('chemistry','medicine')
+
+10. Early Medicine, Late Literature
+
+select yr,subject, winner
+from nobel
+where subject='literature' and yr>=2004
+union
+SELECT yr,subject, winner
+FROM nobel
+WHERE subject='medicine' and yr<1910
+
+11. Umlaut
+
+SELECT *
+FROM nobel
+WHERE winner='PETER GRÜNBERG'
+
+12. Apostrophe
+
+select * 
+from nobel
+where winner like 'Eugene O%'
+
+13. Knights of the realm
+
+select winner,yr,subject
+from nobel
+where winner like 'sir%'
+
+14. Chemistry and Physics last
+
+SELECT winner,subject 
+FROM nobel
+WHERE yr=1984 
+order by subject in ('Chemistry','Physics') ,subject,winner
