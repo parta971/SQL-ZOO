@@ -1,0 +1,7 @@
+1. Total world population
+
+SELECT SUM(population)
+FROM world
+
+2. List of continents
+
