@@ -1,0 +1,28 @@
+1. Bigger than Russia
+
+SELECT name 
+FROM world
+WHERE population > (select population from world where name='russia')
+
+
+2.Richer than UK
+
+select name
+from world
+where gdp/population > (select gdp/population from world where name ='United Kingdom') 
+and continent='Europe'
+
+3. Neighbours of Argentina and Australia
+
+select name,continent
+from world
+where 
+continent in (select continent from world where name in('Argentina','Australia')) 
+order by name
+
+4. Between Canada and Poland
+
+select name,population
+from world
+where population > (select population from world where name='Canada')
+and population <(select population from world where name='Poland')
