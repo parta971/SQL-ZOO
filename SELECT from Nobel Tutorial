@@ -35,6 +35,16 @@ winner IN ('Theodore Roosevelt','Woodrow Wilson','Jimmy Carter','Barack Obama')
 
 7. John
 
-select winner from nobel where winner like 'John%'
+select winner 
+from nobel where 
+winner like 'John%'
 
-8.
+8. Chemistry and Physics from different years
+
+SELECT yr,subject,winner
+from nobel
+where subject='Chemistry' and yr=1984
+union
+SELECT yr,subject,winner
+from nobel
+where subject='physics' and yr=1980
