@@ -26,3 +26,24 @@ select name,population
 from world
 where population > (select population from world where name='Canada')
 and population <(select population from world where name='Poland')
+
+5. Percentages of Germany
+
+select name ,concat(round(100*population/(select population from world where name='germany'),0),'%')
+from world
+where continent='europe' 
+
+6. Bigger than every country in Europe
+
+select name
+from world 
+where gdp >= all(select gdp from world where continent='europe' and gdp>0) 
+and  continent<>'europe'
+
+7. Largest in each continent
+
+select continent,name, area
+from world 
+where area in (select max(area) from world group by continent) 
+
+8. 
