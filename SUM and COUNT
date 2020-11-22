@@ -34,3 +34,14 @@ group by continent
 
 7. Counting big countries in each continent
 
+select continent, count(name)
+from world
+where population >=10000000
+group by continent
+
+8. Counting big continents
+
+select continent
+from world
+group by continent
+having sum(population)>=100000000
