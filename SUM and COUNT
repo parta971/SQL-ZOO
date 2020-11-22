@@ -20,4 +20,17 @@ select count(name)
 from world
 where area >= 1000000
 
-5. 
+5. Baltic states population
+
+select sum(population) as population 
+from world 
+where name in ('Estonia', 'Latvia', 'Lithuania')
+
+6. Counting the countries of each continent
+
+select continent ,count(name)
+from world
+group by continent 
+
+7. Counting big countries in each continent
+
