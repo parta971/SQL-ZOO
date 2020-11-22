@@ -5,3 +5,19 @@ FROM world
 
 2. List of continents
 
+select distinct continent
+from world
+
+3. GDP of Africa
+
+elect sum(gdp)
+from world
+where continent='africa'
+
+4. Count the big countries
+
+select count(name)
+from world
+where area >= 1000000
+
+5. 
