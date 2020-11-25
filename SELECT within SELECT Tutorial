@@ -46,4 +46,8 @@ select continent,name, area
 from world 
 where area in (select max(area) from world group by continent) 
 
-8. 
+8. First country of each continent (alphabetically)
+
+SELECT continent, name 
+FROM world x
+WHERE name <= ALL(SELECT name FROM world y WHERE x.continent = y.continent)
