@@ -34,4 +34,10 @@ join eteam
 on id=teamid
 WHERE gtime<=10
 
-6. 
+6. List the dates of the matches and the name of the team in which 'Fernando Santos' was the team1 coach.
+
+SELECT mdate,teamname
+FROM game
+join eteam
+on team1=eteam.id
+where coach ='Fernando Santos' 
