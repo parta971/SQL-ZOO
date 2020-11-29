@@ -1,0 +1,51 @@
+1. 1962 movies
+
+SELECT id, title
+FROM movie
+WHERE yr=1962
+ 
+ 2. When was Citizen Kane released?
+ 
+select yr
+from movie 
+where title='Citizen Kane'
+
+3. Star Trek movies
+
+select id,title,yr
+from movie 
+where title like 'star%trek%'
+order by yr
+
+4. id for actor Glenn Close
+
+select id 
+from actor 
+where name='Glenn Close'
+
+5. id for Casablanca
+
+select id
+from movie
+where title='Casablanca'
+
+6. Cast list for Casablanca
+
+select name
+from casting
+join actor
+on id=actorid
+where movieid=11768
+
+7. Alien cast list
+
+select name from actor 
+where id in (select actorid
+from casting
+join movie
+on id=movieid
+where title='Alien'
+order by actorid)
+
+8. Harrison Ford movies
+
