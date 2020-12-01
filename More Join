@@ -49,3 +49,31 @@ order by actorid)
 
 8. Harrison Ford movies
 
+select title
+from movie
+join casting
+on movie.id=movieid
+join actor
+on actor.id=actorid
+where actor.name='Harrison Ford'
+
+9. Harrison Ford as a supporting actor
+
+select title
+from movie
+join casting
+on movie.id=movieid
+join actor
+on actor.id=actorid
+where actor.name='Harrison Ford'
+and ord<>1
+
+10. Lead actors in 1962 movies
+
+select title,name from movie
+join casting on movie.id=movieid
+join actor on actor.id=actorid
+where yr=1962
+and ord=1
+
+11. 
