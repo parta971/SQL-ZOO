@@ -76,4 +76,31 @@ join actor on actor.id=actorid
 where yr=1962
 and ord=1
 
-11. 
+11. Busy years for Rock Hudson
+
+SELECT yr,COUNT(title) FROM movie 
+JOIN casting ON movie.id=movieid
+JOIN actor   ON actorid=actor.id
+WHERE name='Rock Hudson'
+GROUP BY yr
+HAVING COUNT(title) > 2
+
+12. Lead actor in Julie Andrews movies
+
+SELECT title,name FROM movie 
+JOIN casting ON movie.id=movieid and ord=1
+JOIN actor   ON actorid=actor.id
+where movie.id in (
+SELECT movieid FROM casting
+WHERE actorid IN (
+  SELECT id FROM actor
+  WHERE name='Julie Andrews')
+) 
+
+13. Actors with 15 leading roles
+
+
+
+14. List the films released in the year 1978 ordered by the number of actors in the cast, then by title
+
+15. List all the people who have worked with 'Art Garfunkel'.
